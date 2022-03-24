@@ -11,4 +11,5 @@ The app consists of two pages: one to view and add contacts and one to view and 
 
 ## Set up
 
-`npm instal
+Must have Node.js instaled
+run `npm instal`
