@@ -5,8 +5,7 @@ import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  
-  //const [contact, setContact] = useState([]);
+  const [contact, setContact] = useState([]);
   const [appointment, setAppointment] = useState([]);
 
   const ROUTES = {
@@ -42,7 +41,10 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-            <ContactsPage />
+            <ContactsPage 
+              contact={contact} 
+              setContact={setContact}
+            />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             <AppointmentsPage addAppointment={addAppointment} />
