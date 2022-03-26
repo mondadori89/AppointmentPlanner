@@ -3,39 +3,37 @@ import React from "react";
 export const ContactForm = ({
   profile,
   handleChange,
-  name,
-  setName,
-  phone,
-  setPhone,
-  email,
-  setEmail,
   handleSubmit
 }) => {
   return (
        <form onSubmit={handleSubmit}>
           <input
-            value={profile.firstName || ''}
-            name="firstName"
+            value={profile.name || ''}
+            name="name"
             type="text"
-            placeholder="First Name"
+            placeholder="Name"
             onChange={handleChange}
+            required
           />
           <input
-            value={profile.lastName || ''}
+            value={profile.email || ''}
             type="text"
-            name="lastName"
-            placeholder="Last Name"
+            name="email"
+            placeholder="E-mail"
             onChange={handleChange}
+            required
           />
           <input
             value={profile.phoneNumber || ''}
-            type="text"
+            type="number"
             name="phoneNumber"
             placeholder="Phone Number"
             onChange={handleChange}
+            required
           />
           <button type="submit">Submit</button>
         </form> 
   );
 };
 
+// Como se coloca o pattern no React???     pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"

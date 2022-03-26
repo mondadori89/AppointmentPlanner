@@ -13,18 +13,6 @@ function App() {
     APPOINTMENTS: "/appointments",
   };
 
-  /*const addContact = (newContact) => {
-    setContact((prev) => {
-      return [newContact, ...prev];
-    })
-  }
-*/
-  const addAppointment = (newAppointment) => {
-    setAppointment((prev) => {
-      return [newAppointment, ...prev];
-    })
-  }
-
   return (
     <>
       <nav>
@@ -47,7 +35,7 @@ function App() {
             />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            <AppointmentsPage addAppointment={addAppointment} />
+            <AppointmentsPage />
           </Route>
         </Switch>
       </main>

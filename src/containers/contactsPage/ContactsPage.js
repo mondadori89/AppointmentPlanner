@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm.js";
+import { TileList } from "../../components/tileList/TileList.js";
 
 export const ContactsPage = (props) => {
   const { contact, setContact } = props;
@@ -16,14 +17,14 @@ export const ContactsPage = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const checkContact = obj => obj.name === profile.name;
+    if (contact.some(checkContact)) {
+      alert('This contact is already on your list...');
+      return;
+    }
     setContact((prev) => { return [profile, ...prev]; })
     setProfile({});
   };
-
-  /*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
 
   return (
     <div>
@@ -38,14 +39,9 @@ export const ContactsPage = (props) => {
       <hr />
       <section>
         <h2>Contacts</h2>
-        <ul>
-          {contact.map((each) => (
-            <li key={each.id}>
-              <p>Name: {each.firstName} {each.lastName}</p>
-              <p>Phone number: {each.phoneNumber}</p>
-            </li>
-          ))}
-        </ul>
+        <TileList 
+          contact={contact}
+        />
       </section>
     </div>
   );

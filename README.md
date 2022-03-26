@@ -12,4 +12,9 @@ The app consists of two pages: one to view and add contacts and one to view and 
 ## Set up
 
 Must have Node.js instaled <br>
-run `npm instal` <br>
+run `npm install` <br>
+
+React Hook Form <br>
+run `npm install react-hook-form` <br>
+
+
