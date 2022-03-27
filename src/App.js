@@ -35,7 +35,11 @@ function App() {
             />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            <AppointmentsPage />
+            <AppointmentsPage 
+            contact={contact}
+            appointment={appointment} 
+            setAppointment={setAppointment}
+            />
           </Route>
         </Switch>
       </main>
@@ -44,3 +48,6 @@ function App() {
 }
 
 export default App;
+
+
+// próximos passos: arrumar o contact selected nos appointments e os patterns dos forms (getTodayString)

@@ -2,9 +2,31 @@ import React from "react";
 
 export const ContactForm = ({
   profile,
-  handleChange,
-  handleSubmit
+  setProfile,
+  contact,
+  setContact
 }) => {
+
+  const handleChange = ({ target }) => {
+    const { name, value } = target;
+    setProfile(prev => ({
+      ...prev,
+      [name]: value,
+      id: Date.now()
+    }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const checkContact = obj => obj.name === profile.name;
+    if (contact.some(checkContact)) {
+      alert('This contact is already on your list...');
+      return;
+    }
+    setContact((prev) => { return [profile, ...prev]; })
+    setProfile({});
+  };
+
   return (
        <form onSubmit={handleSubmit}>
           <input

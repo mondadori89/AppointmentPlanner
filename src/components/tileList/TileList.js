@@ -1,16 +1,20 @@
 import React from "react";
+import { Tile } from "../../components/tile/Tile.js";
 
 export const TileList = (props) => {
-  const { contact } = props;
+  const { objectsArray } = props;
   return (
     <div>
       <ul>
-          {contact.map((each) => (
-            <li key={each.id}>
-              <p>Name: {each.name} / E-mail: {each.email} / Phone number: {each.phoneNumber}</p>
-            </li>
-          ))}
+        {objectsArray.map((each) => (
+          <li key={each.id}>
+            <Tile
+              object={each}
+            />
+          </li>
+         ))}
       </ul>
     </div>
   );
 };
+

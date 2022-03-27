@@ -6,41 +6,22 @@ export const ContactsPage = (props) => {
   const { contact, setContact } = props;
   const [profile, setProfile] = useState({});
 
-  const handleChange = ({ target }) => {
-    const { name, value } = target;
-    setProfile(prev => ({
-      ...prev,
-      [name]: value,
-      id: Date.now()
-    }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const checkContact = obj => obj.name === profile.name;
-    if (contact.some(checkContact)) {
-      alert('This contact is already on your list...');
-      return;
-    }
-    setContact((prev) => { return [profile, ...prev]; })
-    setProfile({});
-  };
-
   return (
     <div>
       <section>
         <h2>Add Contact</h2> 
         <ContactForm 
-          handleSubmit={handleSubmit}
           profile={profile}
-          handleChange={handleChange}
+          setProfile={setProfile}
+          contact={contact}
+          setContact={setContact}
         />
       </section>
       <hr />
       <section>
         <h2>Contacts</h2>
         <TileList 
-          contact={contact}
+          objectsArray={contact}
         />
       </section>
     </div>
