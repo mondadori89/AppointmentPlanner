@@ -42,7 +42,7 @@ export const AppointmentForm = (props) => {
         type="date"
         placeholder="Date"
         onChange={handleChange}
-        min={getTodayString}
+        min={getTodayString()}
         required
       />
       <input 
@@ -64,6 +64,3 @@ export const AppointmentForm = (props) => {
   );
 };
 
-
-// The min={getTodayString} had no effect...
-// When I select no option on the ContactPicker, it goes blank instead of "No contact selected."
