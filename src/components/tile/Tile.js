@@ -8,10 +8,10 @@ export const Tile = (props) => {
       <p>{object.name ? 'Name:' : ''} {object.name} </p>
       <p>{object.email ? 'E-mail:' : ''} {object.email} </p>
       <p>{object.phoneNumber ? 'Phone number:' : ''} {object.phoneNumber} </p>
-      <p>{object.title ? 'Title:' : ''} {object.title} </p>
+      <p>{object.title ? 'Appointment:' : ''} {object.title} </p>
       <p>{object.date ? 'Date:' : ''} {object.date} </p>
       <p>{object.time ? 'Time:' : ''} {object.time} </p>
-      <p>{object.contactSelected ? 'Contact selected:' : ''} {object.contactSelected} </p>
+      <p>{object.contactSelected ? 'Who:' : ''} {object.contactSelected} </p>
     </div>
   );
 };

@@ -58,4 +58,4 @@ export const ContactForm = ({
   );
 };
 
-// Como se coloca o pattern no React???     pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"
+// HTML form Patterns don't work on react... How should I do it?     pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"

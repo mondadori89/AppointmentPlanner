@@ -1,4 +1,5 @@
 import React from "react";
+import { ContactPicker } from "../../components/contactPicker/ContactPicker.js";
 
 export const AppointmentForm = (props) => {
   const { contact, appointment, setAppointment, appointmentInfo, setAppointmentInfo } = props;
@@ -38,72 +39,31 @@ export const AppointmentForm = (props) => {
       <input 
         value={appointmentInfo.date || ''}
         name="date"
-        type="text"
+        type="date"
         placeholder="Date"
         onChange={handleChange}
+        min={getTodayString}
         required
       />
       <input 
         value={appointmentInfo.time || ''}
         name="time"
-        type="text"
+        type="time"
         placeholder="Time"
         onChange={handleChange}
         required
       />
       <label htmlFor="dropdown">Select contact</label>
-      <select 
-        name="contactSelected"
-        value={appointmentInfo.contactSelected || ''}
-        onChange={handleChange}
-        required
-        > 
-        <option defaultValue>Select a contact</option>
-        <option value="Contact 1">Contact 1</option>
-        <option value="Contact 2">Contact 2</option>
-      </select>
+      <ContactPicker 
+        contact={contact}
+        appointmentInfo={appointmentInfo}
+        handleChange={handleChange}
+      />
       <button type="submit">Submit</button>
     </form>
   );
 };
 
 
-
-/*
-
-Appointment Form: 
-Title (input)
-date (input)
-time (input)
-Contact picker (dropdown list of contacts)
-
-
-<form onSubmit={handleSubmit}>
-          <input
-            value={profile.name || ''}
-            name="name"
-            type="text"
-            placeholder="Name"
-            onChange={handleChange}
-            required
-          />
-          <input
-            value={profile.email || ''}
-            type="text"
-            name="email"
-            placeholder="E-mail"
-            onChange={handleChange}
-            required
-          />
-          <input
-            value={profile.phoneNumber || ''}
-            type="number"
-            name="phoneNumber"
-            placeholder="Phone Number"
-            onChange={handleChange}
-            required
-          />
-          <button type="submit">Submit</button>
-        </form>
-
-*/
+// The min={getTodayString} had no effect...
+// When I select no option on the ContactPicker, it goes blank instead of "No contact selected."

@@ -50,4 +50,6 @@ function App() {
 export default App;
 
 
-// próximos passos: arrumar o contact selected nos appointments e os patterns dos forms (getTodayString)
+// at ContactForm:  HTML form Patterns don't work on react... How should I do it?     pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"
+// at AppointmentForm:  The min={getTodayString} had no effect...
+// at ContactPicker:  When I select no option on the ContactPicker, it goes blank instead of "No contact selected."
