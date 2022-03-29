@@ -49,5 +49,3 @@ function App() {
 
 export default App;
 
-
-// at ContactForm:  HTML form Patterns don't work on react? How should I do it?     pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"

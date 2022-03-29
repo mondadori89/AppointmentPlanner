@@ -47,16 +47,14 @@ export const ContactForm = ({
           />
           <input
             value={profile.phoneNumber || ''}
-            type="number"
+            type="tel"
             name="phoneNumber"
-            placeholder="Phone Number"
+            placeholder="Phone Number Format: 12 34567-8900"
             onChange={handleChange}
-            pattern="^\s*\(?(020[7,8]{1}\)?[ ]?[1-9]{1}[0-9{2}[ ]?[0-9]{4})|(0[1-8]{1}[0-9]{3}\)?[ ]?[1-9]{1}[0-9]{2}[ ]?[0-9]{3})\s*$"
+            pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
             required
           />
           <button type="submit">Submit</button>
         </form> 
   );
 };
-
-// HTML form Patterns don't work on react? How should I do it?     pattern="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"
