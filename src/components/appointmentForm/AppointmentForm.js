@@ -2,7 +2,7 @@ import React from "react";
 import { ContactPicker } from "../../components/contactPicker/ContactPicker.js";
 
 export const AppointmentForm = (props) => {
-  const { contact, appointment, setAppointment, appointmentInfo, setAppointmentInfo } = props;
+  const { contact, setAppointment, appointmentInfo, setAppointmentInfo } = props;
 
   const getTodayString = () => {
     const [month, day, year] = new Date()
